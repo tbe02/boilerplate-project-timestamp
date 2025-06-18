@@ -15,7 +15,7 @@ app.get('/api/:date?', function (req, res) {
     if (!Date.parse(date_string)) {
 
         if (isNaN(date_string)) {
-            res.json({ error : "Invalid Date" })
+            return res.json({ error : "Invalid Date" })
         }
 
         let unix = Number(date_string)
